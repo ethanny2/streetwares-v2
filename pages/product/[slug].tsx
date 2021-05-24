@@ -19,6 +19,8 @@ export async function getStaticProps({
 }: GetStaticPropsContext<{ slug: string }>) {
   const config = getConfig({ locale })
   const { pages } = await getAllPages({ config, preview })
+  // The description contains many fancy words, but in plain English, it means:
+  // when you add an exclamation mark after variable/property name, you're telling to TypeScript that you're certain that value is not null or undefined.
   const { product } = await getProduct({
     variables: { slug: params!.slug },
     config,

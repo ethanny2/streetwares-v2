@@ -20,6 +20,7 @@ export async function getStaticProps({
     config,
     preview,
   })
+  console.log({ products })
 
   // const { categories, brands } = await getSiteInfo({ config, preview })
   // const { pages } = await getAllPages({ config, preview })
@@ -40,6 +41,7 @@ export default function Home({
   brands,
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log({ products })
   return (
     <>
       <Grid>
