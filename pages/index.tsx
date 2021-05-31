@@ -2,6 +2,7 @@ import { Layout } from '@components/common'
 import { Grid, Marquee, Hero } from '@components/ui'
 import { ProductCard } from '@components/product'
 import HeroImage from '@components/customize/HeroImage/'
+import ImageZoom from '@components/customize/ImageZoom/'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { ReactElement } from 'react'
@@ -11,27 +12,6 @@ import { getConfig } from '@framework/api'
 import getAllProducts from '@framework/product/get-all-products'
 import getSiteInfo from '@framework/common/get-site-info'
 import getAllPages from '@framework/common/get-all-pages'
-
-// let HeroGridArray: ReactElement[] = [
-//   <HeroImage
-//     src="/home-images/pants-home.jpg"
-//     to="/search&q=pants"
-//     width={200}
-//     height={400}
-//   />,
-//   <HeroImage
-//     src="/home-images/obey-home.jpg"
-//     to="/search/designers/obey"
-//     width={200}
-//     height={300}
-//   />,
-//   <HeroImage
-//     src="/home-images/tshirt-home.jpg"
-//     to="/search&q=shirts"
-//     width={300}
-//     height={400}
-//   />,
-// ]
 
 export async function getStaticProps({
   preview,
@@ -71,8 +51,8 @@ export default function Home({
       <>
         <HeroImage
           alt="Skateboarder ollies over a barrier"
-          width={800}
-          height={325}
+          width={500}
+          height={200}
           src="/home-images/active-home.jpg"
           to="/search/designers/active"
         />
@@ -112,7 +92,7 @@ export default function Home({
           Add in framer motion to animate in
           Find new font for the site?
         */}
-        <Link href={'#'}>
+        {/* <Link href={'#'}>
           <a className="sm:col-span-1 col-span-3">
             <Image
               src="/home-images/obey-home.jpg"
@@ -144,8 +124,8 @@ export default function Home({
               layout="responsive"
             />
           </a>
-        </Link>
-        <Link href={'#'}>
+        </Link> */}
+        {/* <Link href={'#'}>
           <a className="col-span-3">
             <Image
               src="/home-images/nikesb-home.jpg"
@@ -155,20 +135,35 @@ export default function Home({
               layout="responsive"
             />
           </a>
-        </Link>
+        </Link> */}
+        <ImageZoom
+          colSpanned={1}
+          title="Skateboarder walking down train tracks while holding board"
+          to="/search/designers/obey"
+          backgroundImage="bg-obey-home"
+          text="Shop Obey"
+        />
+        <ImageZoom
+          colSpanned={1}
+          title="Man in tye-dye shirt with beanie against blue sky"
+          to="/search?q=shirts"
+          backgroundImage="bg-tshirt-home"
+          text="Shop Shirts"
+        />{' '}
+        <ImageZoom
+          colSpanned={1}
+          title="Stack of pants on top of each other"
+          to="/search?q=pants"
+          backgroundImage="bg-pants-home"
+          text="Shop Pants"
+        />
+        <ImageZoom
+          colSpanned={3}
+          title="Nike SB product collection with skateboarders hopping a fence in background"
+          to="/search?q=shoes"
+          backgroundImage="bg-nikesb-home"
+        />
       </section>
-      {/* <Grid layout="B">
-        {[1, 2, 3].map((placeholder, idx) => {
-          if (placeholder === 1) return HeroGridArray[0]
-          if (placeholder === 2) return HeroGridArray[1]
-          if (placeholder === 3) return HeroGridArray[2]
-        })}
-      </Grid> */}
-      {/* <HomeAllProductsGrid
-        newestProducts={products}
-        categories={categories}
-        brands={brands}
-      /> */}
     </>
   )
 }

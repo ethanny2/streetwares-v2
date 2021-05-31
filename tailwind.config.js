@@ -19,6 +19,12 @@ module.exports = {
       maxWidth: {
         '8xl': '1920px',
       },
+      backgroundImage: (theme) => ({
+        'nikesb-home': "url('/home-images/nikesb-home.jpg')",
+        'pants-home': "url('/home-images/pants-home.jpg')",
+        'tshirt-home': "url('/home-images/tshirt-home.jpg')",
+        'obey-home': "url('/home-images/obey-home.jpg')",
+      }),
       colors: {
         primary: 'var(--primary)',
         'primary-2': 'var(--primary-2)',
