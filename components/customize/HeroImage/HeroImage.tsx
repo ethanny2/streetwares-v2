@@ -1,6 +1,8 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const HeroImage: FC<{
   src: string
@@ -9,8 +11,28 @@ const HeroImage: FC<{
   height: number
   alt: string
 }> = ({ src, to, width, height, alt }) => {
+  const heroVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  }
+  const controls = useAnimation()
+  const { ref, inView } = useInView()
+  useEffect(() => {
+    if (inView) controls.start('visible')
+    // if (!inView) controls.start('hidden')
+  }, [inView, controls])
   return (
-    <section className="w-full h-50">
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={heroVariant}
+      className="w-full h-auto"
+    >
       <Link href={to}>
         <a>
           <Image
@@ -22,7 +44,7 @@ const HeroImage: FC<{
           />
         </a>
       </Link>
-    </section>
+    </motion.section>
   )
 }
 

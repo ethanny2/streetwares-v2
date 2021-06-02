@@ -4,6 +4,7 @@ import { Logo, Container } from '@components/ui'
 import { Searchbar, UserNav } from '@components/common'
 import NavbarRoot from './NavbarRoot'
 import s from './Navbar.module.css'
+import Image from 'next/image'
 
 const Navbar: FC = () => (
   <NavbarRoot>
@@ -12,7 +13,12 @@ const Navbar: FC = () => (
         <div className="flex items-center flex-1">
           <Link href="/">
             <a className={s.logo} aria-label="Logo">
-              <Logo />
+              <Image
+                className="rounded-full"
+                height="35"
+                width="35"
+                src="/icon-144x144.png"
+              />
             </a>
           </Link>
           <nav className="hidden ml-6 space-x-4 lg:block">
@@ -24,12 +30,6 @@ const Navbar: FC = () => (
             </Link>
             <Link href="/search?q=pants">
               <a className={s.link}>Pants</a>
-            </Link>
-            <Link href="/search?q=hats">
-              <a className={s.link}>Hats</a>
-            </Link>
-            <Link href="/search?q=sweaters">
-              <a className={s.link}>Sweaters</a>
             </Link>
             <Link href="/search?q=shoes">
               <a className={s.link}>Shoes</a>

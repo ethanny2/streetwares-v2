@@ -1,5 +1,5 @@
 .card-zoom {
-  @apply relative flex items-center justify-center  overflow-hidden shadow-xl w-full h-72 rounded-2xl;
+  @apply cursor-pointer relative flex items-center justify-center  overflow-hidden shadow-xl w-full h-72 rounded-2xl;
 }
 
 .card-zoom-image {
@@ -15,5 +15,9 @@
 }
 
 .card-zoom-text {
-  @apply z-10 absolute text-5xl font-black transition-all duration-500 ease-in-out transform scale-150 text-indigo-600 opacity-80;
+  @apply z-10 absolute text-2xl font-black transition-all duration-500 ease-in-out transform scale-150 text-yellow-500 opacity-80;
+}
+
+.hide {
+  @apply hidden sm:block;
 }

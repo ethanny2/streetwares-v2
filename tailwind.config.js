@@ -23,7 +23,12 @@ module.exports = {
         'nikesb-home': "url('/home-images/nikesb-home.jpg')",
         'pants-home': "url('/home-images/pants-home.jpg')",
         'tshirt-home': "url('/home-images/tshirt-home.jpg')",
+        'tshirt2-home': "url('/home-images/tshirt2-home.jpg')",
+        'tshirt3-home': "url('/home-images/tshirt3-home.jpg')",
         'obey-home': "url('/home-images/obey-home.jpg')",
+        'obey2-home': "url('/home-images/obey2-home.jpg')",
+        'newbalance-home': "url('/home-images/newbalance-home.jpg')",
+        'dc-home': "url('/home-images/dc-home.jpg')",
       }),
       colors: {
         primary: 'var(--primary)',
