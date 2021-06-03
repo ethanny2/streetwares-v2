@@ -24,10 +24,10 @@ const HeroImage: FC<{
   const { ref, inView } = useInView()
   useEffect(() => {
     if (inView) controls.start('visible')
-    // if (!inView) controls.start('hidden')
   }, [inView, controls])
   return (
     <motion.section
+      ref={ref}
       initial="hidden"
       animate="visible"
       variants={heroVariant}

@@ -1,14 +1,11 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import type { Page } from '@framework/common/get-all-pages'
 import getSlug from '@lib/get-slug'
-import { Github, Vercel } from '@components/icons'
-import { Logo, Container } from '@components/ui'
+import { Container } from '@components/ui'
 import { I18nWidget } from '@components/common'
-import s from './Footer.module.css'
 
 interface Props {
   className?: string
@@ -36,42 +33,42 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=shirts">
+                <Link href="/search?q=shirts">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Shirts
                   </a>
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=pants">
+                <Link href="/search?q=pants">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Pants
                   </a>
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=hats">
+                <Link href="/search?q=hats">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Hats
                   </a>
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=bags">
+                <Link href="/search?q=bags">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Bags
                   </a>
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=sweaters">
+                <Link href="/search?q=sweaters">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Sweaters
                   </a>
                 </Link>
               </li>
               <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/search&q=shoes">
+                <Link href="/search?q=shoes">
                   <a className="text-primary justify-center flex hover:text-accents-6 transition ease-in-out duration-150">
                     Shoes
                   </a>

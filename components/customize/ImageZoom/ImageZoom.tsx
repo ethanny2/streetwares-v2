@@ -26,46 +26,23 @@ const ImageZoom: FC<{
   hide,
 }) => {
   const controls = useAnimation()
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView({ threshold: 0.5, delay: 50 })
   useEffect(() => {
     if (inView) controls.start('visible')
   }, [inView, controls])
 
   const imageZoomVariant = {
-    hidden: { scale: 0 },
+    hidden: { opacity: 0 },
     visible: {
-      scale: 1,
+      opacity: 1,
       transition: {
         duration: 0.6,
       },
     },
   }
-  // String concatenated classes with template literals are
-  // getting tree shaken by Tailwind in prod
-  function getColClass(num: any) {
-    switch (num) {
-      case 1:
-        return 'sm:col-span-1'
-      case 2:
-        return 'sm:col-span-2'
-      case 3:
-        return 'sm:col-span-3'
-    }
-  }
 
-  function getSmallColClass(num: any) {
-    switch (num) {
-      case 1:
-        return 'col-span-1'
-      case 2:
-        return 'col-span-2'
-      case 3:
-        return 'col-span-3'
-    }
-  }
-
-  const colClass = getColClass(colSpanned)
-  const mediaQueryColClass = getSmallColClass(smallColSpanned)
+  const colClass = `sm:col-span-${colSpanned}`
+  const mediaQueryColClass = `col-span-${smallColSpanned}`
 
   return (
     <>

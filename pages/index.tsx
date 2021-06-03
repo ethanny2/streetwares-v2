@@ -1,16 +1,11 @@
 import { Layout } from '@components/common'
-import { Grid, Marquee, Hero } from '@components/ui'
+import { Marquee } from '@components/ui'
 import { ProductCard } from '@components/product'
 import HeroImage from '@components/customize/HeroImage/'
 import ImageZoom from '@components/customize/ImageZoom/'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import { ReactElement } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { getConfig } from '@framework/api'
 import getAllProducts from '@framework/product/get-all-products'
-import getSiteInfo from '@framework/common/get-site-info'
-import getAllPages from '@framework/common/get-all-pages'
 
 export async function getStaticProps({
   preview,
@@ -23,11 +18,6 @@ export async function getStaticProps({
     config,
     preview,
   })
-  console.log({ products })
-
-  // const { categories, brands } = await getSiteInfo({ config, preview })
-  // const { pages } = await getAllPages({ config, preview })
-
   return {
     props: {
       products,
@@ -44,7 +34,6 @@ export default function Home({
   brands,
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log({ products })
   return (
     <>
       <HeroImage
