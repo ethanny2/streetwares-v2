@@ -3,6 +3,7 @@ import { Logo, Button, Input } from '@components/ui'
 import useLogin from '@framework/auth/use-login'
 import { useUI } from '@components/ui/context'
 import { validate } from 'email-validator'
+import Image from 'next/image'
 
 interface Props {}
 
@@ -61,7 +62,13 @@ const LoginView: FC<Props> = () => {
       className="w-80 flex flex-col justify-between p-3"
     >
       <div className="flex justify-center pb-12 ">
-        <Logo width="64px" height="64px" />
+        {/* <Logo width="64px" height="64px" /> */}
+        <Image
+          className="rounded-full"
+          height="64"
+          width="64"
+          src="/icon-144x144.png"
+        />
       </div>
       <div className="flex flex-col space-y-3">
         {message && (

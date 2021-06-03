@@ -9,7 +9,6 @@ import type { Product } from '@commerce/types'
 import usePrice from '@framework/product/use-price'
 import { useAddItem } from '@framework/cart'
 import { getVariant, SelectedOptions } from '../helpers'
-import WishlistButton from '@components/wishlist/WishlistButton'
 
 interface Props {
   children?: any
@@ -151,13 +150,6 @@ const ProductView: FC<Props> = ({ product }) => {
             </Button>
           </div>
         </div>
-        {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
-          <WishlistButton
-            className={s.wishlistButton}
-            productId={product.id}
-            variant={product.variants[0]! as any}
-          />
-        )} */}
       </div>
     </Container>
   )

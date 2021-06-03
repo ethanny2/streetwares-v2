@@ -1,11 +1,8 @@
 import { FC, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from './ImageZoom.module.css'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { UrlObject } from 'url'
-declare type Url = string | UrlObject
 
 const ImageZoom: FC<{
   colSpanned?: number

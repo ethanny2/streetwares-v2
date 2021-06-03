@@ -55,10 +55,6 @@ export default function Home({
         to="/search/designers/active"
       />
       <section className="w-full h-30 grid gap-4 grid-cols-3 px-10 my-4">
-        {/* 
-          Increase hero image height on smaller widths  
-          Add in framer motion to animate in
-        */}
         <ImageZoom
           colSpanned={1}
           title="Skateboarder sitting on his board with a pigeon in the front of the lens"
