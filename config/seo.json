@@ -7,7 +7,7 @@
     "description": "Demo headless shopify site with Nextjs",
     "type": "website",
     "locale": "en_IE",
-    "url": "https://nextjs.org/commerce",
+    "url": "https://100streetwares.vercel.app/",
     "site_name": "100 Streetwares",
     "images": [
       {

@@ -21,7 +21,7 @@ const HeroImage: FC<{
     },
   }
   const controls = useAnimation()
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView({ delay: 100 })
   useEffect(() => {
     if (inView) controls.start('visible')
   }, [inView, controls])
